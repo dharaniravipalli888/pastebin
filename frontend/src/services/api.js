@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://pastebin-ouej.vercel.app";
 
 // Health check
 export const healthCheck = async () => {
@@ -31,3 +31,4 @@ export const getPaste = async (pasteId) => {
   if (!response.ok) throw new Error("Paste not found or expired");
   return response.json();
 };
+
