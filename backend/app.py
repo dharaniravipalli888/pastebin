@@ -1,3 +1,4 @@
+from fastapi import FastAPI
 import sys
 from pathlib import Path
 
@@ -6,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 # Add backend directory to path
 sys.path.insert(0, str(Path(__file__).parent))
 
-from fastapi import FastAPI
+
 from fastapi.middleware.cors import CORSMiddleware
 from db import engine
 from models import Base
@@ -30,5 +31,6 @@ app.include_router(router)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
 
 
